@@ -568,6 +568,92 @@ section[id] {
   margin-inline: auto;
 }
 
+.pricing-table {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+  max-width: 860px;
+  margin: 34px auto 0;
+  text-align: left;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 26px 24px;
+  border: 2px solid rgba(27, 18, 61, 0.14);
+  border-radius: 8px;
+  background: #FFFFFF;
+  box-shadow: 0 14px 34px rgba(27, 18, 61, 0.09);
+}
+
+.pricing-card--featured {
+  border-color: var(--color-yellow);
+  background: linear-gradient(180deg, #FFF8EA 0%, #FFFFFF 58%);
+}
+
+.pricing-card__label {
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--color-white);
+  background: var(--color-purple);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pricing-card--featured .pricing-card__label {
+  background: var(--color-yellow);
+}
+
+.pricing-card__title {
+  color: #1F193D;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.pricing-card__price {
+  margin-top: 10px;
+  color: #8E0808;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.pricing-card__features {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 0;
+  color: #1F193D;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  list-style: none;
+}
+
+.pricing-card__features li {
+  position: relative;
+  padding-left: 26px;
+}
+
+.pricing-card__features li::before {
+  content: "";
+  position: absolute;
+  top: 0.45em;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  box-shadow: inset 0 0 0 3px var(--color-white), 0 0 0 1px var(--color-cyan);
+}
+
 /* Seletor composto para vencer o border-radius de .cta-button, que vem depois. */
 .cta-button.ingressos-section__cta {
   margin-top: 30px;
@@ -3488,6 +3574,24 @@ section[id] {
 
   .vip-card {
     flex-basis: calc((100% - 2 * 20px) / 3);
+  }
+
+  .pricing-table {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 22px;
+  }
+
+  .pricing-card {
+    padding: 30px;
+  }
+
+  .pricing-card__title {
+    font-size: 34px;
+  }
+
+  .pricing-card__price {
+    font-size: 38px;
   }
 
   .formas-pagamento {
