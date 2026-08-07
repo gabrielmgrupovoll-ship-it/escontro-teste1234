@@ -386,8 +386,34 @@
     return;
   }
 
+  const popupStorageKey = "encontro:popup-lancamento:last-shown";
   const closeButton = popup.querySelector(".popup__close");
   const lastFocused = document.activeElement;
+
+  const getTodayKey = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  };
+
+  const wasShownToday = () => {
+    try {
+      return window.localStorage.getItem(popupStorageKey) === getTodayKey();
+    } catch (error) {
+      return false;
+    }
+  };
+
+  const markShownToday = () => {
+    try {
+      window.localStorage.setItem(popupStorageKey, getTodayKey());
+    } catch (error) {
+      // localStorage pode estar indisponivel em navegadores restritivos.
+    }
+  };
 
   const closePopup = () => {
     popup.hidden = true;
@@ -399,6 +425,8 @@
   };
 
   const openPopup = () => {
+    markShownToday();
+
     if (popup.hidden) {
       popup.hidden = false;
     }
@@ -430,6 +458,10 @@
       closePopup();
     }
   });
+
+  if (wasShownToday()) {
+    return;
+  }
 
   openPopup();
 })();
