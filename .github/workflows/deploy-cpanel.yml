@@ -1,0 +1,24 @@
+name: Deploy para cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Atualizar cPanel
+        env:
+          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+          CPANEL_USER: ${{ secrets.CPANEL_USER }}
+          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
+
+        run: |
+          curl --fail-with-body -sS -G \
+            -H "Authorization: cpanel ${CPANEL_USER}:${CPANEL_TOKEN}" \
+            --data-urlencode "repository_root=/home/${CPANEL_USER}/public_html" \
+            --data-urlencode "branch=main" \
+            "https://${CPANEL_HOST}:2083/execute/VersionControl/update"
