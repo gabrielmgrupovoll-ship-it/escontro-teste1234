@@ -63,3 +63,4 @@ Imagens ainda em `.png` / `.jpg` aguardando conversão para `.webp`.
 **Não converter:**
 - `assets/images/favicon_voll_pilates_institucional.png`: favicon; alguns navegadores/plataformas exigem PNG ou ICO.
 # encontro-teste
+# encontro-teste
