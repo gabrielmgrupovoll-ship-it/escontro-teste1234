@@ -35,10 +35,10 @@
     <style>
       @media (max-width:767px){.site-main>#palestrantes{display:none}.patrocinadores-grid .patrocinador{flex-basis:100%}}
     </style>
-    <link rel="stylesheet" href="assets/css/styles.min.css?v=20260806-4" media="(min-width: 768px)">
-    <link rel="preload" href="assets/css/styles.min.css?v=20260806-4" as="style" media="(max-width: 767px)" onload="this.onload=null;this.media='all';this.rel='stylesheet'">
+    <link rel="stylesheet" href="assets/css/styles.min.css?v=20260807-1" media="(min-width: 768px)">
+    <link rel="preload" href="assets/css/styles.min.css?v=20260807-1" as="style" media="(max-width: 767px)" onload="this.onload=null;this.media='all';this.rel='stylesheet'">
     <noscript>
-      <link rel="stylesheet" href="assets/css/styles.min.css?v=20260806-4">
+      <link rel="stylesheet" href="assets/css/styles.min.css?v=20260807-1">
       <style>body{overflow:auto!important}#popup-lancamento{display:none!important}</style>
     </noscript>
     <link rel="stylesheet" href="assets/css/visual-alignment.css?v=20260806-1">
@@ -462,9 +462,12 @@
 
           <div class="pricing-table" aria-label="Tabela de preços dos ingressos">
             <article class="pricing-card">
-              <p class="pricing-card__label">Ingresso</p>
-              <h3 class="pricing-card__title">Golden</h3>
-              <p class="pricing-card__price">R$ 1.297</p>
+              <div class="pricing-card__head">
+                <p class="pricing-card__label">Ingresso</p>
+                <h3 class="pricing-card__title">Golden</h3>
+                <p class="pricing-card__price">R$ 1.297</p>
+                <p class="pricing-card__note">Experiência completa no evento</p>
+              </div>
               <ul class="pricing-card__features">
                 <li>Acesso aos 3 dias de evento</li>
                 <li>Participação em workshops</li>
@@ -474,9 +477,13 @@
             </article>
 
             <article class="pricing-card pricing-card--featured">
-              <p class="pricing-card__label">Mais completo</p>
-              <h3 class="pricing-card__title">VIP</h3>
-              <p class="pricing-card__price">R$ 1.997</p>
+              <div class="pricing-card__featured-tag">Mais completo</div>
+              <div class="pricing-card__head">
+                <p class="pricing-card__label">Ingresso</p>
+                <h3 class="pricing-card__title">VIP</h3>
+                <p class="pricing-card__price">R$ 1.997</p>
+                <p class="pricing-card__note">Para quem quer prioridade e mentoria</p>
+              </div>
               <ul class="pricing-card__features">
                 <li>Tudo do ingresso Golden</li>
                 <li>Mentoria com os diretores da VOLL</li>
@@ -485,7 +492,7 @@
             </article>
           </div>
 
-          <a class="cta-button ingressos-section__cta" href="#ingressos" border-radius: 38px;>ÚLTIMOS INGRESSOS: GARANTA SUA VAGA</a>
+          <a class="cta-button ingressos-section__cta" href="#ingressos">ÚLTIMOS INGRESSOS: GARANTA SUA VAGA</a>
 
           <h3 class="ingressos-section__restam">RESTAM 50 INGRESSOS DISPONÍVEIS</h3>
 
