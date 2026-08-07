@@ -671,6 +671,7 @@ section[id] {
   display: grid;
   gap: 12px;
   margin-top: 22px;
+  margin-bottom: 28px;
   padding: 0;
   color: #1F193D;
   font-size: 16px;
@@ -700,6 +701,41 @@ section[id] {
   font-size: 12px;
   font-weight: 800;
   line-height: 1;
+}
+
+.pricing-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  margin-top: auto;
+  padding: 13px 18px;
+  border-radius: 999px;
+  color: var(--color-white);
+  background: var(--color-purple);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.pricing-card__cta:focus-visible,
+.pricing-card__cta:hover {
+  color: var(--color-white);
+  background: #2D2061;
+  transform: translateY(-1px);
+}
+
+.pricing-card__cta--featured {
+  background: var(--color-yellow);
+}
+
+.pricing-card__cta--featured:focus-visible,
+.pricing-card__cta--featured:hover {
+  background: #C98500;
 }
 
 /* Seletor composto para vencer o border-radius de .cta-button, que vem depois. */
@@ -3632,10 +3668,6 @@ section[id] {
 
   .pricing-card {
     padding: 34px 32px 32px;
-  }
-
-  .pricing-card--featured {
-    transform: translateY(-10px);
   }
 
   .pricing-card__title {
