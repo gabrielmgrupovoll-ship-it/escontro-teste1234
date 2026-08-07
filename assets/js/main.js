@@ -435,7 +435,7 @@
       document.body.style.overflow = "hidden";
     }
 
-    // O diálogo já nasce visível; o foco aguarda a primeira pintura para não
+    // O foco aguarda a primeira pintura para não
     // forçar o cálculo completo do layout no caminho crítico do mobile.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => closeButton.focus({ preventScroll: true }));
