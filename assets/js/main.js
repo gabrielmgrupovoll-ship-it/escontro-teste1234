@@ -48,6 +48,36 @@
 })();
 
 (() => {
+  const heroVideo = document.querySelector(".hero-section__video");
+
+  if (!heroVideo || !heroVideo.dataset.src) {
+    return;
+  }
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const desktop = window.matchMedia("(min-width: 768px)").matches;
+  const saveData = navigator.connection?.saveData;
+
+  if (reduceMotion || !desktop || saveData) {
+    return;
+  }
+
+  const loadHeroVideo = () => {
+    heroVideo.src = heroVideo.dataset.src;
+    heroVideo.removeAttribute("data-src");
+    heroVideo.load();
+    heroVideo.play().catch(() => {});
+  };
+
+  if (document.readyState === "complete") {
+    window.setTimeout(loadHeroVideo, 800);
+    return;
+  }
+
+  window.addEventListener("load", () => window.setTimeout(loadHeroVideo, 800), { once: true });
+})();
+
+(() => {
   // Com movimento reduzido, deixa o <details> abrir e fechar nativamente.
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     return;

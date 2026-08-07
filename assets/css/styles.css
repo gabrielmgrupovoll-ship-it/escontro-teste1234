@@ -276,6 +276,9 @@ section[id] {
   overflow: hidden;
   color: var(--color-white);
   background: var(--color-purple);
+  background-image: url("../images/background_video_2023.webp");
+  background-position: center;
+  background-size: cover;
   isolation: isolate;
 }
 
@@ -329,6 +332,15 @@ section[id] {
 .hero-section__title span {
   display: block;
   color: var(--color-cyan);
+}
+
+.hero-section__lead {
+  max-width: 760px;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.45;
 }
 
 .hero-section__date {
@@ -946,6 +958,51 @@ section[id] {
 }
 
 @media (max-width: 767px) {
+  .hero-section {
+    min-height: auto;
+    padding-block: 32px 38px;
+  }
+
+  .hero-section__logo {
+    width: min(210px, 72vw);
+  }
+
+  .hero-section__title {
+    font-size: 28px;
+    line-height: 1.12;
+  }
+
+  .hero-section__lead {
+    font-size: 15px;
+    line-height: 1.42;
+  }
+
+  .hero-section__date {
+    font-size: 17px;
+  }
+
+  .hero-section__cta,
+  .ingressos-section__cta {
+    width: 100%;
+  }
+
+  .pricing-card {
+    padding: 26px 20px 24px;
+  }
+
+  .pricing-card__title {
+    font-size: 30px;
+  }
+
+  .pricing-card__price {
+    font-size: 36px;
+  }
+
+  .pricing-card__featured-tag {
+    top: 14px;
+    right: 14px;
+  }
+
   .site-main > #palestrantes {
     display: none;
   }
@@ -3614,6 +3671,10 @@ section[id] {
   .hero-section__alert {
     width: min(600px, 100%);
     margin-bottom: 10px;
+  }
+
+  .hero-section__lead {
+    font-size: 19px;
   }
 
   .hero-section__date {
